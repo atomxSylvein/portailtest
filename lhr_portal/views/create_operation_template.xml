@@ -1,8 +1,10 @@
 <odoo>
 	<template id="create_operation">
-		<t t-call=" website.layout_footer_copyright">
-      <xpath expr="//footer" position="replace"/>
-    </t>
+
+		<!-- Load the css file -->
+		<link href="/lhr_portal/static/src/css/lhr_portal.css" rel="stylesheet" type="text/css"/>
+
+		<!-- Main layout content -->
 		<t t-call="website.layout">
 			<t t-set="title"><t t-esc="title"/></t>
 			<div class="paper_background">
@@ -515,6 +517,8 @@
 			</div>
 		</t>
 
+		<!-- Footer layout content -->
+		<t t-call="website.layout_footer_copyright"><xpath expr="//footer" position="replace"/></t>
 		<!-- div id="lhr_footer" position="replace">
 			<div id="footer" class="oe_structure oe_structure_solo" t-ignore="true" t-if="not no_footer" style="padding-top:10px;background-color:white;">
 				<section class="s_text_block pb0 pt0">
