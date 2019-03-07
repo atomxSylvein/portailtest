@@ -15,14 +15,14 @@ class Main(http.Controller):
 		return request.render('lhr_portal.blank', {})"""
 
 
-	@http.route('/<langpath>/formulaire-contact', auth="public", csrf=False)
+	@http.route('/<langpath>/formulaire-contact', auth="public", website=True, csrf=False)
 	def formulaire_devis(self, langpath=None, **post):
 		#récupération des pays
 		country_environment = request.env['res.country'] 
 		countries = country_environment.sudo().search([])
 		language = "fr" if langpath == "fr_FR" else "en" if langpath == "en_EN" else "pt"
 		title = "Demande de devis" if language == "fr" else "Quote request" if language == "en" else "Orçamento personalizado"
-		return request.render('lhr_portal.create_operation', { 'countries' : countries, '_lang':language, 'source':post.get('source'), 'title':title,} )
+		return request.render('lhr_portal.create_operation', { 'countries' : countries, 'lang':language, 'source':post.get('source'), 'title':title,} )
 
 
 	"""@http.route('/success', type='http', auth='public', website=True)
