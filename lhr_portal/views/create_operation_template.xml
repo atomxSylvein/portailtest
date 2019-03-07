@@ -9,7 +9,7 @@
         	</title>
       	</xpath -->
 		<t t-call="website.layout">
-			<t t-set="title"><t t-esc="title"></t>
+			<t t-set="title"><t t-esc="title"/></t>
 			<div class="paper_background">
 				<div class="paper">
 
