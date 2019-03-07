@@ -1,15 +1,15 @@
 <odoo>
 	<template id="create_operation">
 
-		<!-- xpath expr="//title" position="replace">
+		<xpath expr="//title" position="replace">
         	<title>
         		<t t-if="lang == 'en'">Quote request</t>
         		<t t-elif="lang == 'fr'">Demande de devis</t>
         		<t t-else="">Orçamento personalizado</t>
         	</title>
-      	</xpath -->
+      	</xpath>
 		<t t-call="website.layout">
-			<t t-set="title"><t t-esc="title"/></t>
+			<!-- t t-set="title"><t t-esc="title"/></t -->
 			<div class="paper_background">
 				<div class="paper">
 
