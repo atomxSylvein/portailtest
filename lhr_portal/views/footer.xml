@@ -1,17 +1,22 @@
 <odoo>
-  <!-- Redefine footer -->
+  <!-- Redefine footer - ->
   <template id="lhr_footer" inherit_id="website.layout" name="LHR footer">
 
-    <!-- Assign an id  -->
+    <!- - Assign an id  - ->
       <xpath expr="//div[@id='wrapwrap']/footer" position="attributes">
           <attribute name="id">lhr_footer</attribute>
       </xpath>
 
-    <!-- Replace footer -->
+    <!- - Replace footer - ->
     <xpath expr="//div[@id='wrapwrap']/footer" position="replace">
       <div id="footer" class="oe_structure oe_structure_solo" t-ignore="true" t-if="not no_footer" style="padding-top:10px;background-color:white;">
       </div>
     </xpath>
 
+  </template -->
+  <template id="lhr_footer">
+    <t t-call=" website.layout_footer_copyright">
+      <xpath expr="//footer" position="replace"/>
+    </t>
   </template>
 </odoo>
