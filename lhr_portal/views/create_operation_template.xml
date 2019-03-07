@@ -8,8 +8,8 @@
         		<t t-else="">Orçamento personalizado</t>
         	</title>
       	</xpath -->
-
-		<!-- t t-call="website.layout" -->
+		<t t-call="website.layout">
+			<t t-set="title"><t t-esc="title"/></t>
 			<div class="paper_background">
 				<div class="paper">
 
@@ -518,9 +518,9 @@
 					</form>
 				</div>
 			</div>
-		<!-- /t -->
+		</t>
 
-		<div id="lhr_footer" position="replace">
+		<!-- div id="lhr_footer" position="replace">
 			<div id="footer" class="oe_structure oe_structure_solo" t-ignore="true" t-if="not no_footer" style="padding-top:10px;background-color:white;">
 				<section class="s_text_block pb0 pt0">
 					<div class="container">
@@ -564,7 +564,7 @@
 					</div>
 				</section>
 			</div>
-		</div>
+		</div -->
 
 	</template>
 </odoo>

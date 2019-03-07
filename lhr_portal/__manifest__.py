@@ -18,10 +18,8 @@
 
     'data': [
         'security/ir.model.access.csv',
-        'views/templates.xml',        
-        'views/footer.xml',
+        'views/templates.xml',
         'views/create_operation_template.xml',
-        'views/header.xml',
         'views/success.xml',
     ],
     'images': [
