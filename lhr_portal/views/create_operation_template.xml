@@ -1,5 +1,8 @@
 <odoo>
 	<template id="create_operation">
+		<t t-call=" website.layout_footer_copyright">
+      <xpath expr="//footer" position="replace"/>
+    </t>
 		<t t-call="website.layout">
 			<t t-set="title"><t t-esc="title"/></t>
 			<div class="paper_background">
