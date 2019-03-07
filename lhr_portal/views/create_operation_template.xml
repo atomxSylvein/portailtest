@@ -3,8 +3,8 @@
 
 		<xpath expr="//title" position="replace">
         	<title>
-        		<t t-if="lang == 'en'">Quote request</t>
-        		<t t-elif="lang == 'fr'">Demande de devis</t>
+        		<t t-if="_lang == 'en'">Quote request</t>
+        		<t t-elif="_lang == 'fr'">Demande de devis</t>
         		<t t-else="">Orçamento personalizado</t>
         	</title>
       	</xpath>
@@ -39,7 +39,7 @@
 							</td>
   						</tr>
 						</table>
-						<div style="center" t-if="lang == 'pt'">Contato</div>
+						<div style="center" t-if="_lang == 'pt'">Contato</div>
 					  	<div  style="center" t-else="">Contact</div>
 					</h1>
 					<br/>
@@ -47,27 +47,27 @@
 
 						<input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
 						<input type="hidden" name="source" t-att-value="source"/>
-						<input type="hidden" name="lang" t-att-value="lang"/>
+						<input type="hidden" name="_lang" t-att-value="_lang"/>
 						
 						<div class="form-group form-field o_website_form_required_custom">
 							<h4>
-								<t t-if="lang == 'en'">You are ? *</t>
-							  	<t t-elif="lang == 'pt'">Você é? *</t>
+								<t t-if="_lang == 'en'">You are ? *</t>
+							  	<t t-elif="_lang == 'pt'">Você é? *</t>
 							  	<t t-else="">Vous êtes ? *</t> 
 							<span class="grey">
 							  <span class="list-item">
 							  <input type="radio" name="gender" value="man" checked="checked">&amp;nbsp;</input> 
 							  <span class="grey first">
-							  	<t t-if="lang == 'en'">MAN</t>
-							  	<t t-elif="lang == 'pt'">HOMEM</t>
+							  	<t t-if="_lang == 'en'">MAN</t>
+							  	<t t-elif="_lang == 'pt'">HOMEM</t>
 							  	<t t-else="">HOMME</t>
 							  </span>
 							  </span>
 							  <span class="list-item">
 							    <input type="radio" name="gender" value="woman">&amp;nbsp;</input> 
 							    <span class="grey">
-							    	<t t-if="lang == 'en'">WOMAN</t>
-								  	<t t-elif="lang == 'pt'">MULHER</t>
+							    	<t t-if="_lang == 'en'">WOMAN</t>
+								  	<t t-elif="_lang == 'pt'">MULHER</t>
 								  	<t t-else="">FEMME</t>
 							    </span>
 							  </span>
@@ -80,7 +80,7 @@
 								<tr>
 									<td>
 										<input 
-											t-if="lang == 'en'"
+											t-if="_lang == 'en'"
 											type="text" 
 											name="firstname" 
 											class="space form-control o_website_form_input"
@@ -90,7 +90,7 @@
 											oninput="this.setCustomValidity('')"
 											title="Please fill in this field"/>
 									  	<input 
-									  		t-elif="lang == 'fr'"
+									  		t-elif="_lang == 'fr'"
 											type="text" 
 											name="firstname" 
 											class="space form-control o_website_form_input"
@@ -112,7 +112,7 @@
 									</td>
 									<td>
 										<input 
-											t-if="lang == 'en'"
+											t-if="_lang == 'en'"
 											type="text" 
 											name="lastname" 
 											class="form-control o_website_form_input"
@@ -122,7 +122,7 @@
 											oninput="this.setCustomValidity('')"
 											title="Please fill in this field"/>
 										<input 
-											t-elif="lang == 'fr'"
+											t-elif="_lang == 'fr'"
 											type="text" 
 											name="lastname" 
 											class="form-control o_website_form_input"
@@ -146,7 +146,7 @@
 								<tr>
 									<td colspan="2">
 										<input 
-											t-if="lang == 'en'"
+											t-if="_lang == 'en'"
 											type="text" 
 											name="street" 
 											class="space form-control o_website_form_input"
@@ -156,7 +156,7 @@
 											oninput="this.setCustomValidity('')"
 											title="Please fill in this field"/>
 										<input 
-											t-elif="lang == 'fr'"
+											t-elif="_lang == 'fr'"
 											type="text" 
 											name="street" 
 											class="space form-control o_website_form_input"
@@ -180,7 +180,7 @@
 								<tr>
 									<td>
 										<input 
-											t-if="lang == 'en'"
+											t-if="_lang == 'en'"
 											type="text" 
 											name="zip" 
 											class="space form-control o_website_form_input"
@@ -190,7 +190,7 @@
 											oninput="this.setCustomValidity('')"
 											title="Please fill in this field"/>
 										<input 
-											t-elif="lang == 'fr'"
+											t-elif="_lang == 'fr'"
 											type="text" 
 											name="zip" 
 											class="space form-control o_website_form_input"
@@ -212,7 +212,7 @@
 									</td>
 									<td>
 										<input 
-											t-if="lang == 'en'"
+											t-if="_lang == 'en'"
 											type="text" 
 											name="city" 
 											class="form-control o_website_form_input"
@@ -222,7 +222,7 @@
 											oninput="this.setCustomValidity('')"
 											title="Please fill in this field"/>
 										<input 
-											t-elif="lang == 'fr'"
+											t-elif="_lang == 'fr'"
 											type="text" 
 											name="city" 
 											class="form-control o_website_form_input"
@@ -255,7 +255,7 @@
 									</td>
 									<td>
 										<input 
-											t-if="lang == 'en'"
+											t-if="_lang == 'en'"
 											type="number" 
 											name="yo" 
 											class="form-control o_website_form_input"
@@ -265,7 +265,7 @@
 											oninput="this.setCustomValidity('')"
 											title="Please fill in this field"/>
 										<input 
-											t-elif="lang == 'fr'"
+											t-elif="_lang == 'fr'"
 											type="number" 
 											name="yo" 
 											class="form-control o_website_form_input"
@@ -289,7 +289,7 @@
 								<tr>
 									<td colspan="2">
 										<input 
-											t-if="lang == 'en'"
+											t-if="_lang == 'en'"
 											type="text" 
 											name="email" 
 											class="space form-control o_website_form_input"
@@ -299,7 +299,7 @@
 											oninput="this.setCustomValidity('')"
 											title="Please fill in this field"/>
 										<input 
-											t-elif="lang == 'fr'"
+											t-elif="_lang == 'fr'"
 											type="text" 
 											name="email" 
 											class="space form-control o_website_form_input"
@@ -323,13 +323,13 @@
 								<tr>
 									<td>
 										<input 
-											t-if="lang == 'en'"
+											t-if="_lang == 'en'"
 											type="text" 
 											name="phone" 
 											class="space form-control o_website_form_input"
 											placeholder="Phone"/>
 										<input 
-											t-elif="lang == 'fr'"
+											t-elif="_lang == 'fr'"
 											type="text" 
 											name="phone" 
 											class="space form-control o_website_form_input"
@@ -343,13 +343,13 @@
 									</td>
 									<td>
 										<input 
-											t-if="lang == 'en'"
+											t-if="_lang == 'en'"
 											type="text" 
 											name="mobile" 
 											class="form-control o_website_form_input"
 											placeholder="Mobile phone"/>
 										<input 
-											t-elif="lang == 'fr'"
+											t-elif="_lang == 'fr'"
 											type="text" 
 											name="mobile" 
 											class="form-control o_website_form_input"
@@ -367,21 +367,21 @@
 
 						<div class="space"> 
 							<h5>
-								<t t-if="lang == 'en'">Have you ever had a hair transplant? *</t>
-							  	<t t-elif="lang == 'pt'">Já fez algum tranplante capilar? *</t>
+								<t t-if="_lang == 'en'">Have you ever had a hair transplant? *</t>
+							  	<t t-elif="_lang == 'pt'">Já fez algum tranplante capilar? *</t>
 							  	<t t-else="">Avez-vous déjà eu recours à la greffe de cheveux ? *</t>
 
 								<select name="grafted" class="form-control o_website_form_input" style="margin-top:10px;">
-									<option value="no" t-if="lang == 'en'">No</option>
-							  		<option value="no" t-elif="lang == 'pt'">Não</option>
+									<option value="no" t-if="_lang == 'en'">No</option>
+							  		<option value="no" t-elif="_lang == 'pt'">Não</option>
 							  		<option value="no" t-else="">Non</option>
 
-							  		<option value="fue" t-if="lang == 'en'">Yes, it was a FUE type operation</option>
-							  		<option value="fue" t-elif="lang == 'pt'">Sim, foi uma operação do tipo FUE</option>
+							  		<option value="fue" t-if="_lang == 'en'">Yes, it was a FUE type operation</option>
+							  		<option value="fue" t-elif="_lang == 'pt'">Sim, foi uma operação do tipo FUE</option>
 							  		<option value="fue" t-else="">Oui, c'était une opération de type FUE</option>
 
-							  		<option value="fut" t-if="lang == 'en'">Yes, it was a FUT type operation</option>
-							  		<option value="fut" t-elif="lang == 'pt'">Sim, foi uma operação do tipo FUT</option>
+							  		<option value="fut" t-if="_lang == 'en'">Yes, it was a FUT type operation</option>
+							  		<option value="fut" t-elif="_lang == 'pt'">Sim, foi uma operação do tipo FUT</option>
 							  		<option value="fut" t-else="">Oui, c'était une opération de type FUT</option>
 								</select>
 								<br/><br/>
@@ -391,7 +391,7 @@
 
 						<div class="form-group form-field o_website_form_required_custom" style="margin-top:10px;">
 							<textarea
-								t-if="lang == 'en'"
+								t-if="_lang == 'en'"
 								type="text"
 								name="message" 
 								rows = "7" 
@@ -404,7 +404,7 @@
 								oninput="this.setCustomValidity('')"
 								title="Please fill in this field"></textarea> 
 							<textarea
-								t-elif="lang == 'fr'"
+								t-elif="_lang == 'fr'"
 								type="text"
 								name="message" 
 								rows = "7" 
@@ -433,8 +433,8 @@
 
 						<div class="form-group" style="margin-top:10px;">
 							<t><h5>
-								<t t-if="lang == 'en'">Evaluate your baldness level : *</t>
-							  	<t t-elif="lang == 'pt'">Avalie o seu nível de calvície : *</t>
+								<t t-if="_lang == 'en'">Evaluate your baldness level : *</t>
+							  	<t t-elif="_lang == 'pt'">Avalie o seu nível de calvície : *</t>
 							  	<t t-else="">Évaluez votre niveau de calvitie : *</t>
 							</h5></t><br/>
 							<table class="large">
@@ -469,40 +469,40 @@
 						  <table>
 						    <tr>
 						    	<td>
-						    		<t t-if="lang == 'en'">Donor area (nape)</t>
-								  	<t t-elif="lang == 'pt'">Área doadora (nuca)</t>
+						    		<t t-if="_lang == 'en'">Donor area (nape)</t>
+								  	<t t-elif="_lang == 'pt'">Área doadora (nuca)</t>
 								  	<t t-else="">Zone donneuse (nuque)</t>
 						    	</td>
 						    	<td><input type="file" name="donor_neck" class="file form-control" data-show-upload="true" data-show-caption="true" lass="file" data-show-preview="true" accept="image/*,application/pdf"/></td>
 						    </tr>
 						    <tr>
 						    	<td>
-						    		<t t-if="lang == 'en'">Donor area (sides)</t>
-								  	<t t-elif="lang == 'pt'">Área doadora (laterais)</t>
+						    		<t t-if="_lang == 'en'">Donor area (sides)</t>
+								  	<t t-elif="_lang == 'pt'">Área doadora (laterais)</t>
 								  	<t t-else="">Zone donneuse (côté)</t>
 						    	</td>
 						    	<td><input type="file" name="donor_side" class="file form-control" data-show-upload="true" data-show-caption="true" lass="file" data-show-preview="true" accept="image/*,application/pdf"/></td>
 						    </tr>
 						    <tr>
 						    	<td>
-						    		<t t-if="lang == 'en'">Area to be treated (front part)</t>
-								  	<t t-elif="lang == 'pt'">Área a tratar (parte da frente) </t>
+						    		<t t-if="_lang == 'en'">Area to be treated (front part)</t>
+								  	<t t-elif="_lang == 'pt'">Área a tratar (parte da frente) </t>
 								  	<t t-else="">Zone à traiter (face)</t>
 						    	</td>
 						    	<td><input type="file" name="treat_face" class="file form-control" data-show-upload="true" data-show-caption="true" lass="file" data-show-preview="true" accept="image/*,application/pdf"/></td>
 						    </tr>
 						    <tr>
 						    	<td>
-						    		<t t-if="lang == 'en'">Area to be treated (side)</t>
-								  	<t t-elif="lang == 'pt'">Área a tratar (perfil)</t>
+						    		<t t-if="_lang == 'en'">Area to be treated (side)</t>
+								  	<t t-elif="_lang == 'pt'">Área a tratar (perfil)</t>
 								  	<t t-else="">Zone à traiter (profil)</t>
 						    	</td>
 						    	<td><input type="file" name="treat_side" class="file form-control" data-show-upload="true" data-show-caption="true" lass="file" data-show-preview="true" accept="image/*,application/pdf"/></td>
 						    </tr>
 						    <tr>
 						    	<td>
-						    		<t t-if="lang == 'en'">Area to be treated (top of the head)</t>
-								  	<t t-elif="lang == 'pt'">Área a tratar (parte de cima)</t>
+						    		<t t-if="_lang == 'en'">Area to be treated (top of the head)</t>
+								  	<t t-elif="_lang == 'pt'">Área a tratar (parte de cima)</t>
 								  	<t t-else="">Zone à traiter (dessus)</t>
 						    	</td>
 						    	<td><input type="file" name="treat_top" class="file form-control" data-show-upload="true" data-show-caption="true" lass="file" data-show-preview="true" accept="image/*,application/pdf"/></td>
@@ -511,8 +511,8 @@
 						</div>
 
 						<div class="form-group" align="right">
-							<button t-if="lang == 'en'" class="btn btn-block btn-primary o_website_form_send" style="max-width: 20%;">Send</button>
-							<button t-elif="lang == 'pt'" class="btn btn-block btn-primary o_website_form_send" style="max-width: 20%;">Enviar</button>
+							<button t-if="_lang == 'en'" class="btn btn-block btn-primary o_website_form_send" style="max-width: 20%;">Send</button>
+							<button t-elif="_lang == 'pt'" class="btn btn-block btn-primary o_website_form_send" style="max-width: 20%;">Enviar</button>
 							<button t-else="" class="btn btn-block btn-primary o_website_form_send" style="max-width: 20%;">Envoyer</button>
 						</div>
 					</form>
@@ -526,7 +526,7 @@
 					<div class="container">
 						<div class="row">
 
-						<div t-if="lang == 'en'" class="col-lg-4" id="connect">
+						<div t-if="_lang == 'en'" class="col-lg-4" id="connect">
 							<h5 style="color: rgb(33, 37, 41); font-size=1.09375rem; line-height:1.2;">LHR Clinic</h5>
 							<ul class="list-unstyled">
 								<li data-original-title="" title="" aria-describedby="tooltip779555">Av. Sidónio Pais, Nº. 8, 5º. Esq.</li>
@@ -537,7 +537,7 @@
 							<p> </p>
 						</div>
 
-						<div t-elif="lang == 'fr'" class="col-lg-4" id="connect">
+						<div t-elif="_lang == 'fr'" class="col-lg-4" id="connect">
 							<h5 style="color: rgb(33, 37, 41); font-size=1.09375rem; line-height:1.2;">Clinique LHR</h5>
 							<ul class="list-unstyled">
 								<li data-original-title="" title="" aria-describedby="tooltip779555">8, avenue Sidonio Pais</li>

@@ -15,17 +15,17 @@ class Main(http.Controller):
 		return request.render('lhr_portal.blank', {})"""
 
 
-	@http.route('/<lang>/formulaire-contact', auth="public", website=True, csrf=False)
-	def formulaire_devis(self, lang=None, **post):
+	@http.route('/<langpath>/formulaire-contact', auth="public", website=True, csrf=False)
+	def formulaire_devis(self, langpath=None, **post):
 		#récupération des pays
 		country_environment = request.env['res.country'] 
 		countries = country_environment.sudo().search([])
-		language = "fr" if lang == "fr_FR" else "en" if lang == "en_EN" else "pt"
+		language = "fr" if langpath == "fr_FR" else "en" if langpath == "en_EN" else "pt"
 		title = "Demande de devis" if language == "fr" else "Quote request" if language == "en" else "Orçamento personalizado"
-		return request.render('lhr_portal.create_operation', { 'countries' : countries, 'lang':language, 'source':post.get('source'), 'title':title,} )
+		return request.render('lhr_portal.create_operation', { 'countries' : countries, '_lang':language, 'source':post.get('source'), 'title':title,} )
 
 
-	@http.route('/success', type='http', auth='public', website=True)
+	"""@http.route('/success', type='http', auth='public', website=True)
 	def create_devis(self, **post):
 
 		contact_environment = request.env['res.partner']
@@ -88,4 +88,4 @@ class Main(http.Controller):
 			'm_treat_top_filename' : str(post.get('treat_top').filename) if post.get('treat_top',False) else None,
 			'm_treat_top' : base64.b64encode(post.get('treat_top').read()) if post.get('treat_top',False) else None,
 		})
-		return request.render('lhr_portal.success', {'source':post.get('source'),'lang':post.get('lang'),} )
+		return request.render('lhr_portal.success', {'source':post.get('source'),'lang':post.get('lang'),} )"""

@@ -18,7 +18,7 @@
 
     'data': [
         'security/ir.model.access.csv',
-        'views/templates.xml',
+        #'views/templates.xml',
         'views/create_operation_template.xml',
         #'views/success.xml',
     ],
