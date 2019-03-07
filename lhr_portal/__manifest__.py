@@ -18,11 +18,12 @@
 
     'data': [
         'security/ir.model.access.csv',
-        'views/templates.xml',
-        #'views/accueil_template.xml',
-        'views/create_operation_template.xml',
+        'views/templates.xml',        
         'views/footer.xml',
+        'views/create_operation_template.xml',
         'views/header.xml',
+        'views/blank.xml',
+        'views/success.xml',
     ],
     'images': [
         'static/src/img/man_1.png',
