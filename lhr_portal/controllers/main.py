@@ -2,9 +2,9 @@ import base64
 from odoo import http
 from odoo.http import request
 
-from odoo.addons.website.controllers.main import Website
+#from odoo.addons.website.controllers.main import Website
 
-class Main(Website):
+class Main(http.Controller):
 
 	#homepage
 	"""@http.route('/', type='http', auth='public', website=True)
